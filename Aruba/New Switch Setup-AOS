@@ -1,0 +1,113 @@
+hostname "GRBR-2930M-33x1"
+banner motd %
+
+FOSS CORP
+Network  Prod Switch 
+10.20.30.40
+FOSS-2930M-33x1
+Room 211
+
+This system is for authorized use only. Unauthorized or improper\n use of this system may result in civil or criminal penalties. By\n continuing to use this system you acknowledge your consent to\n these conditions of use.%
+
+alias "cfg" "config t"
+console idle-timeout 300
+console idle-timeout serial-usb 300
+trunk 48 trk33 lacp
+oobm
+   ip address dhcp-bootp
+   ipv6 enable
+   ipv6 address dhcp full
+   exit
+
+vlan 1
+   name "DEFAULT_VLAN"
+   no untagged 1-47
+   untagged trk33
+   no ip address
+   ipv6 enable
+   ipv6 address dhcp full
+   exit
+vlan 20
+   name "ADMIN"
+   tagged trk33
+   ip address 10.44.7.8 255.255.255.0
+   ip igmp
+   exit
+vlan 21
+   name "CCTV"
+   untagged 1-45
+   tagged trk33
+   no ip address
+   ip igmp
+   exit
+vlan 80
+   name "BAS"
+   untagged 46,47
+   tagged trk33
+   no ip address
+   exit
+vlan 90
+   name "Mgmt"
+   tagged trk33
+   ip address 10.209.208.33 255.255.248.0
+   exit
+
+interface trk33 dhcp-snooping trust
+interface trk33 tagged vlan 20,21,80,90
+no spanning-tree trk33 bpdu-protection
+no spanning-tree trk33 admin-edge-port
+interface 48
+no power-over-ethernet
+wr mem
+exit
+
+dhcp-snooping
+dhcp-snooping authorized-server 10.44.7.2
+dhcp-snooping authorized-server 10.209.208.2
+dhcp-snooping authorized-server 172.17.3.201
+dhcp-snooping vlan 20-21 90,80
+logging 172.17.2.142
+logging severity info
+include-credentials
+password manager user-name "prof" sha1 "cb1a2bad4a6b89b9ae4f738d484cb85366c1b4ff"
+timesync sntp
+sntp unicast
+sntp 60
+sntp server priority 1 172.17.3.45
+no telnet-server
+telnet-server listen data
+time daylight-time-rule continental-us-and-canada
+time timezone -300
+ip default-gateway 10.209.208.1
+ip dns server-address priority 1 172.17.0.37
+ip dns server-address priority 2 172.17.0.36
+ip dns server-address priority 3 172.17.3.143
+ip ssh listen data
+interface 1-48 broadcast-limit 10
+spanning-tree 1-47 bpdu-protection
+spanning-tree trap errant-bpdu
+snmp-server community "public"
+snmp-server community "Katwe2019" operator unrestricted
+snmp-server host 172.17.2.142 community "foss2019" trap-level all
+snmp-server contact "network@foss.ca"
+aaa authentication console login tacacs
+aaa authentication web login radius local
+aaa authentication ssh login tacacs
+primary-vlan 90
+spanning-tree
+spanning-tree 1-47 admin-edge-port
+spanning-tree 1-47 bpdu-protection
+spanning-tree Trk33 priority 4
+spanning-tree Trk33 priority 4
+spanning-tree trap errant-bpdu
+spanning-tree bpdu-protection-timeout 600
+no tftp server
+tftp server listen data
+loop-protect 1-47
+loop-protect trap loop-detected
+loop-protect disable-timer 300
+no autorun
+no dhcp config-file-update
+no dhcp image-file-update
+no dhcp tr69-acs-url
+
