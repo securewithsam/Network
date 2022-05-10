@@ -1,0 +1,176 @@
+banner custom
+banner 1 "FOSS SW 1"
+banner 2 "RM233"
+banner 3 "10.21.13.19"
+banner 4 "Temp install for Lab : August/16/2021"
+
+no password security
+username RW password
+password aging-time 90
+password password-history 3
+password complexity lower-case 2
+password complexity numeric 2
+password complexity special 2
+password complexity upper-case 2
+password min-length 10
+password notifications 30
+
+stack-monitor enable
+stack-monitor stack-size 3
+
+no fa message-authentication 1/1-48,2/1-48,3/1-48
+
+
+sntp server primary address 172.17.3.45
+sntp enable
+cli password serial local
+cli password telnet local
+tftp-server 172.17.3.3
+
+radius server host timeout 2
+radius server host used-by eapol timeout 2
+radius server host used-by non-eapol timeout 2
+radius dynamic-server replay-protection
+
+snmp-server enable
+snmp-server contact "its.network@yfoss.corp"
+snmp-server name "foss-4850-09x3"
+snmp-server location "HUB-RM233"
+snmp-server host 172.17.3.12 community
+snmp-server community "kl*****" rw
+
+no snmp-server notification-control authenticationFailure
+snmp-server notification-control bsnLoginFailure
+
+ip default-gateway 10.21.136.1
+ip address stack 10.21.136.9
+ip address netmask 255.255.248.0
+ip address unit 1 10.21.136.41
+ip address unit 2 10.21.136.42
+ip address unit 3 10.21.136.43
+
+
+logging remote address 172.16.1.207
+logging remote enable
+logging remote level informational
+
+interface Ethernet ALL
+lacp mode port 1/1-47,2/1-47,3/1-47 off
+exit
+
+vlan create 20-21,29-30,40,50,60,70,80,90,120 type port 1
+vlan name 20 "adminofc"
+vlan name 21 "cctv"
+vlan name 29 "office"
+vlan name 30 "cafeteria"
+vlan name 40 "wireless"
+vlan name 50 "video"
+vlan name 60 "voice"
+vlan name 70 "internet"
+vlan name 80 "basement"
+vlan name 90 "mgmt"
+vlan name 120 "spare"
+vlan ports 1/48 name "Trunk"
+vlan ports 1/48 tagging tagAll name "lnk>dot8-RM233"
+vlan configcontrol flexible
+vlan members 1 NONE
+vlan members 29 1/1-47,2/1-50,3/1-50
+vlan members 90 1/48
+vlan ports 1/48 pvid 90
+
+ip dhcp-relay
+vlan ports 1/48 tagging tagAll name "lnk>dot8-RM233"
+vlan mem add 20,29,30,40,50,60,70,80,90,120 1/48
+vlan ports 1/48 pvid 20
+vlan ports 1/48 pvid 29
+vlan ports 1/48 pvid 30
+vlan ports 1/48 pvid 40
+vlan ports 1/48 pvid 60
+vlan ports 1/48 pvid 90 
+int eth 1/48 
+no spanning-tree bpdu-filtering 
+no shut
+exit
+wr mem
+
+
+vlan mgmt 90
+
+interface ethernet 1/48
+no spanning-tree
+no spanning-tree bpdu-filtering enable
+exit
+
+ip dhcp-relay
+ip dhcp-snooping enable
+
+interface Ethernet 1/48
+ip dhcp-snooping trusted
+poe poe-shutdown
+exit
+
+vlan configcontrol autopvid
+
+interface Ethernet ALL
+no lldp tx-tlv port 1/1-47,2/1-48,3/1-48 dot3 mac-phy-config-status
+exit
+
+interface Ethernet ALL
+eapol multihost port 1/1-47,2/1-48,3/1-48 mac-max 2
+exit
+
+
+interface Ethernet ALL
+rate-limit port 1/1-48,2/1-48,3/1-48 broadcast 10
+exit
+
+interface Ethernet ALL
+spanning-tree port 1/1-48,2/1-48,3/1-48 learning fast
+spanning-tree bpdu-filtering port 1/1-47 enable timeout 65535
+spanning-tree bpdu-filtering port 2/1-48 enable timeout 65535
+spanning-tree bpdu-filtering port 3/1-48 enable timeout 65535
+exit
+
+
+clock time-zone EST -5 0
+
+interface vlan 1
+ip igmp
+exit
+interface vlan 20
+ip igmp snooping
+exit
+interface vlan 21
+ip igmp snooping
+exit
+interface vlan 29
+ip igmp snooping
+exit
+interface vlan 30
+ip igmp snooping
+exit
+interface vlan 40
+ip igmp snooping
+exit
+interface vlan 50
+ip igmp snooping
+exit
+interface vlan 60
+ip igmp snooping
+exit
+interface vlan 70
+ip igmp snooping
+exit
+interface vlan 80
+ip igmp snooping
+exit
+interface vlan 90
+ip igmp snooping
+exit
+interface vlan 120
+ip igmp snooping
+exit
+
+
+
+
