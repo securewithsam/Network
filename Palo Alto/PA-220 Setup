@@ -1,0 +1,33 @@
+#PA220-Initial Setup:
+
+Step 1: Login to CLI and setup MGMT IP
+set deviceconfig system ip-address 192.168.220.200
+set deviceconfig system netmask 255.255.255.0
+set deviceconfig system default-gateway 192.168.220.1
+set deviceconfig system dns-setting servers primary 8.8.8.8
+
+Step 2: Create Zones
+GUI Login >Network >Zones
+Create Outside Zone (e1/1) - Layer 3
+Create Inside Zone (e1/2) -Layer 3
+
+Step 3: Create Mgmt Profile
+Network Network Profiles>Interface Mgmt >Add
+
+Step 4: Configure Interfaces 
+Network>Interfaces>Ethernet>
+
+Step 5: Virtual Wires (Optional)
+Network>Zones>>Vwire
+Network>Interfaces> ethernet 1/4,1/5  > Type vwire>security zone >vwire
+Network>Virtual Wires>Add> choose ethernet 1/4, 1/5
+
+Step 6:
+Create Virtual router (Interfaces to be able to communicate with each other)
+Network>Virtual Router >Router Settings>General>Add all interfaces
+
+
+Step 7: Create Security Policy 
+Policy>Security>Add 
+
+Step 8: Create NAT
