@@ -1,0 +1,19 @@
+(SWS-MM-FOSS) [00:1a:17:09:00:80] (config) #firewall
+(SWS-MM-FOSS) [00:1a:17:09:00:80] (config-submode)#prohibit-arp-spoofing
+
+To disable 
+(SWS-MM-FOSS) [00:1a:17:09:00:80] (config-submode)#no prohibit-arp-spoofing
+
+
+To disable all locations at once :
+(SWS-MM-FOSS) [mynode] #
+node# cd /md/Secondary
+#config terminal
+#firewall
+#no prohibit-arp-spoofing
+
+
+(SWS-MM-FOSS) [mynode] #cd /md/Secondary
+(SWS-MM-FOSS) [Secondary] #configure terminal
+(SWS-MM-FOSS) [Secondary] (config) #firewall
+(SWS-MM-FOSS) [Secondary] (config-submode)#no prohibit-arp-spoofing
