@@ -1,0 +1,43 @@
+Creating a trunk port- Aruba OS 2930
+
+Single trunk:
+
+trunk 1/45 trk10 lacp
+interface trk10 dhcp-snooping trust
+interface trk10 tagged vlan 20,21,29,40,50,60,70,80,90,120
+no spanning-tree trk10 bpdu-protection
+no spanning-tree trk10 admin-edge-port
+wr me
+interface 1/45
+no power-over-ethernet
+wr mem
+exit
+
+
+
+Creating a trunk port
+OM3 -1/A1 (SFP+)
+
+trunk 1/A1 trk4 lacp
+interface trk4 dhcp-snooping trust
+interface trk4 tagged vlan 20,21,29,30,31,40,50,60,70,80,90,120
+no spanning-tree trk4 bpdu-protection
+no spanning-tree trk4 admin-edge-port
+wr me
+
+
+
+
+With multiple trunks:
+trunk 1/43-1/44 trk3 lacp
+trunk 1/47 trk1 lacp
+trunk 1/48 trk2 lacp
+interface trk1,trk2,trk3,trk4,trk5,trk6,trk7 dhcp-snooping trust
+interface trk1,trk2,trk3,trk4,trk5,trk6,trk7 tagged vlan 20,21,29,40,50,60,70,80,90,120
+no spanning-tree trk1,trk2,trk3,trk4,trk5,trk6,trk7 bpdu-protection
+no spanning-tree trk1,trk2,trk3,trk4,trk5,trk6,trk7 admin-edge-port
+wr me
+interface 1/43
+no power-over-ethernet
+wr mem
+exit
