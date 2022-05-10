@@ -1,0 +1,9 @@
+#show interface management (to find mgmt ip)
+#show interface ethernet1/1 (To find ip for specific interface)
+#show routing route 
+set deviceconfig system ip-address 192.168.220.200
+set deviceconfig system netmask 255.255.255.0
+set deviceconfig system default-gateway 192.168.220.1
+set deviceconfig system dns-setting servers primary 8.8.8.8
+set deviceconfig system hostname SAM-PA-220
+
