@@ -1,0 +1,18 @@
+sudo apt update
+sudo apt upgrade
+sudo apt install openjdk-8-jre-headless
+sudo apt install rng-tools
+sudo nano /etc/default/rng-tools
+sudo systemctl restart rng-tools
+echo 'deb https://www.ui.com/downloads/unifi/de... stable ubiquiti' | sudo tee /etc/apt/sources.list.d/100-ubnt-unifi.list
+sudo wget -O /etc/apt/trusted.gpg.d/unifi-repo.gpg https://dl.ui.com/unifi/unifi-repo.gpg
+sudo apt update
+sudo apt install unifi
+hostname -I
+https://[IPADDRESS]:8443
+
+
+If unable to pull GUI, try below 
+
+sudo apt update
+sudo apt install openjdk-8-jdk
