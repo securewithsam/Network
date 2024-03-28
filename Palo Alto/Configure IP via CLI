@@ -8,10 +8,7 @@ set deviceconfig system dns-setting servers primary 8.8.8.8
 set deviceconfig system hostname SAM-PA-220
 
 
-[or]
 
 
-
-To set ip address manually:
-#set deviceconfig system ip-address 192.168.1.254 netmask 255.255.255.0 default-gateway 192.168.1.1 dns-setting servers primary 4.2.2.2
-#commit
+## Set admin password 
+admin@PA-220# set mgt-config users admin phash Password@123
