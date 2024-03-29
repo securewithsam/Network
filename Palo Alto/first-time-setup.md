@@ -25,6 +25,7 @@ WAN is on interface ethernet1/8 and the LAN on interface ethernet1/3
 
 ![4](https://github.com/securewithsam/Network/assets/85324643/b12d2091-ddc0-4588-baeb-8fdfad1dc23a)
 
+![8](https://github.com/securewithsam/Network/assets/85324643/20d8bb8a-4f2d-4669-8708-6b4f84c1ffb5)
 
-![6](https://github.com/securewithsam/Network/assets/85324643/bf31cc67-7f22-4853-878c-1cdfa1ba7d66)
 ![7](https://github.com/securewithsam/Network/assets/85324643/062596a5-a95f-4d10-8e73-f011e7684980)
+
