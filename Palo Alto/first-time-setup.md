@@ -15,6 +15,9 @@ set deviceconfig system dns-setting servers primary 8.8.8.8
 ```sh
 set mgt-config users admin password
 ```
+```sh
+commit
+```
 ![1](https://github.com/securewithsam/Network/assets/85324643/9226d272-5058-4152-9eae-77b01ea54b2a)
 ![2](https://github.com/securewithsam/Network/assets/85324643/06f87758-256e-4b3c-86a0-771170a5af16)
 
