@@ -50,9 +50,14 @@ LAN
 
 ![17](https://github.com/securewithsam/Network/assets/85324643/55ec4d09-98ca-43aa-91e7-bea5c1b6fd32)
 
+#### Step 6: Routes
+
+![18](https://github.com/securewithsam/Network/assets/85324643/b5373b30-187d-4354-bab2-657128ac3339)
+
+![19](https://github.com/securewithsam/Network/assets/85324643/684ee6eb-f75b-48f8-a6d9-ec176d722684)
 
 
-#### Step 5:  Commit
+#### Step 7:  Commit
 
 ![14](https://github.com/securewithsam/Network/assets/85324643/0bc621bf-ab6e-411b-9c2f-c78882e611aa)
 
