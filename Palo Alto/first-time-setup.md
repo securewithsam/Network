@@ -21,10 +21,12 @@ set mgt-config users admin password
 ### Step2: Configuring Interfaces
 WAN is on interface ethernet1/8 and the LAN on interface ethernet1/3
 
+WAN -ISP
 ![3](https://github.com/securewithsam/Network/assets/85324643/6b56f710-1d1f-438f-8634-872ed9debc07)
 
 ![4](https://github.com/securewithsam/Network/assets/85324643/b12d2091-ddc0-4588-baeb-8fdfad1dc23a)
 
+LAN 
 ![8](https://github.com/securewithsam/Network/assets/85324643/20d8bb8a-4f2d-4669-8708-6b4f84c1ffb5)
 
 ![9](https://github.com/securewithsam/Network/assets/85324643/f73c5096-c1b3-40f0-a9b5-ac1e155c6cd0)
