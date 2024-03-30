@@ -68,6 +68,34 @@ LAN
 ## At this time you should have internet 
 
 
+## VLAN CONFIGURATION 
+
+![image](https://github.com/securewithsam/Network/assets/85324643/0d590628-50aa-49dd-abb4-e90504f214d2)
+
+![image](https://github.com/securewithsam/Network/assets/85324643/462e7203-c78b-4eb2-b4af-de05efb98575)
+
+![image](https://github.com/securewithsam/Network/assets/85324643/d71d00fc-00c1-4917-8512-445a1c371a88)
+
+![image](https://github.com/securewithsam/Network/assets/85324643/d43638c0-020f-4bc2-bf24-94a99a90a70a)
+
+![image](https://github.com/securewithsam/Network/assets/85324643/8bef59ae-1088-4615-901b-b8660a0287ab)
+
+![image](https://github.com/securewithsam/Network/assets/85324643/18a135d9-fd87-4ac6-9782-de9aae9cb730)
+
+![image](https://github.com/securewithsam/Network/assets/85324643/af50a6ad-bea3-47a1-bde3-cad0240229d7)
+
+![image](https://github.com/securewithsam/Network/assets/85324643/056ff2ad-a9c4-49a5-85bd-024cbfa916bd)
+
+
+
+
+
+
+
+
+
+
+
 
 
 
