@@ -1,7 +1,7 @@
 ### Setting up PA-220 
 
 #### If you dont know the password:
-As the firewall is booting up, type "maint" into CLI via console port and then you can choose the option: Reset to Factory Default.
+Connect via console port and reboot the device , once you see the screen asking you to enter "Maint" do so and hit enter , then you can choose the option: Reset to Factory Default.
 
 #### Step 1: Login to CLI and setup MGMT IP
 ```sh
