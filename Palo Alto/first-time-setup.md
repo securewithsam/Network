@@ -68,7 +68,7 @@ LAN
 ## At this time you should have internet 
 
 
-## VLAN CONFIGURATION 
+## ADDING VLANS
 
 ![image](https://github.com/securewithsam/Network/assets/85324643/0d590628-50aa-49dd-abb4-e90504f214d2)
 
