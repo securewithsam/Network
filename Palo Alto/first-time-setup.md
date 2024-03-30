@@ -86,6 +86,7 @@ LAN
 
 ![image](https://github.com/securewithsam/Network/assets/85324643/056ff2ad-a9c4-49a5-85bd-024cbfa916bd)
 
+![image](https://github.com/securewithsam/Network/assets/85324643/cdc1a9e3-e6e3-42af-86b9-5350f61ab31a)
 
 
 
