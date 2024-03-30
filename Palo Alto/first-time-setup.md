@@ -65,7 +65,7 @@ LAN
 ![14](https://github.com/securewithsam/Network/assets/85324643/0bc621bf-ab6e-411b-9c2f-c78882e611aa)
 
 
-## At this time you should have internet 
+####  At this time you should have internet 
 
 
 ## ADDING VLANS
