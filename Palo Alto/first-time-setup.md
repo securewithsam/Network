@@ -3,6 +3,11 @@
 #### If you dont know the password:
 Connect via console port and reboot the device , once you see the screen asking you to enter "Maint" do so and hit enter , then you can choose the option: Reset to Factory Default.
 
+#### By default Mgmt has DHCP enabled .
+
+```sh
+show dhcp client mgmt-interface-state
+```
 #### Step 1: Login to CLI and setup MGMT IP
 ```sh
 
