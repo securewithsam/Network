@@ -1,7 +1,15 @@
-show system state filter chassis.leds ( to check leds)
-show system environmentals (to check fan and psu)
-
-show interface ethernet1/1 | match link ( To check interface)
+#### To check leds
+```sh
+show system state filter chassis.leds
+```
+#### check fan and psu
+```sh
+show system environmentals 
+```
+#### To check interface
+```sh
+show interface ethernet1/1 | match link
+```
 show log system query equal "( eventid eq link-change ) and ( object eq 'ethernet1/1' )" direction equal backward     (To check interface flapping /up and down)
 
 
