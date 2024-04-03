@@ -1,3 +1,5 @@
+#### https://docs.paloaltonetworks.com/pan-os/9-1/pan-os-cli-quick-start/cli-cheat-sheets
+
 #### To check leds
 ```sh
 show system state filter chassis.leds
