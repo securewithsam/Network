@@ -1,4 +1,4 @@
-#### Selfhosted Omada COntroller
+#### Selfhosted Omada Controller
 
 ```sh
 docker volume create omada-data
