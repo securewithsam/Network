@@ -2,7 +2,6 @@
 
 ```sh
 docker volume create omada-data
-docker volume create omada-work
 docker volume create omada-logs
 ```
 
